@@ -77,11 +77,10 @@
 
         getNewsBtn.addEventListener('click', fetchNews);
 
-        // Set yesterday's date
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const formattedDate = `${yesterday.getFullYear()}年${yesterday.getMonth() + 1}月${yesterday.getDate()}日`;
-        newsDateEl.textContent = `为您呈现 ${formattedDate} 的市场精华资讯`;
+        // Set and display the current date
+        const today = new Date();
+        const formattedDate = `${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日`;
+        newsDateEl.textContent = `今天是 ${formattedDate}。为您呈现前一日的市场精华资讯。`;
 
         async function fetchNews() {
             newsContainer.innerHTML = '';
@@ -242,4 +241,6 @@
     </script>
 </body>
 </html>
+
+
 
